@@ -154,6 +154,22 @@ const { title, author, pages, publicationDate, genres, hasMovieAdaptation } = bo
 
 console.log(author, title, genres);
 
-const [primaryGenre, secondaryGenre] = genres;
+const [primaryGenre, secondaryGenre, ...otherGenres] = genres;
 
-console.log(primaryGenre, secondaryGenre);
+console.log(primaryGenre, secondaryGenre, otherGenres);
+
+const newGenres = [...genres, "epic fantasy"];
+newGenres;
+
+const updatedBook = { ...book, moviePublicationDate: "2001-12-19", pages: 1214, };
+
+updatedBook;
+
+const summary = `${title}, a ${primaryGenre} book, was written by ${author} and published in ${publicationDate.split("-")[0]}. The book has ${hasMovieAdaptation ? "" : "not"} been adapted into a movie`;
+summary;
+
+const pagesRange = pages > 1000 ? "over a thousand" : "Less than 1000";
+pagesRange;
+
+console.log(`The book had ${pagesRange} pages`); 
+
