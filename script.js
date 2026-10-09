@@ -197,4 +197,19 @@ const essentialData = books.map((book) => ({
 }));
 essentialData;
 
-const longBooks = 
+const longBooksWithMovie = books.filter((book) => book.pages > 500).filter((book) => book.hasMovieAdaptation);
+longBooksWithMovie;
+
+const adventureBooks = books.filter((book) => book.genres.includes("adventure")).map((book) => book.title);
+adventureBooks;
+
+const pagesAllBooks = books.reduce((sum, book) => sum + book.pages, 0);
+pagesAllBooks;
+
+const arr = [3, 5, 7, 8, 1, 6];
+const sorted = arr.slice().sort((a, b) => a - b);
+sorted;
+arr;
+
+const sortedByPages = books.slice().sort((a, b) => a.pages - b.pages);
+sortedByPages;
